@@ -12,6 +12,96 @@ on:
           - staging
           - prod
         type: choice
+      Environment2:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment3:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment4:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment5:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment6:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment7:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment8:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment9:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment10:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment11:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice  
 
   # push:
     # branches: [main]
