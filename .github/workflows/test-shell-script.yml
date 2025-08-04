@@ -93,15 +93,15 @@ on:
           - staging
           - prod
         type: choice
-      Environment11:
-        description: 'Select the environment11 to run the script'
-        required: true
-        default: dev
-        options:
-          - dev
-          - staging
-          - prod
-        type: choice  
+      # Environment11:
+      #   description: 'Select the environment11 to run the script'
+      #   required: true
+      #   default: dev
+      #   options:
+      #     - dev
+      #     - staging
+      #     - prod
+      #   type: choice  
 
   # push:
     # branches: [main]
