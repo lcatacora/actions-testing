@@ -112,8 +112,26 @@ env:
   ENVIRONMENT14: prod5
 
 jobs:
+  EnvSetup:
+    name: Setup Dynamic Environment Variables for reusable workflow
+    runs-on: ubuntu-latest
+    run: |
+      echo "ENVIRONMENT11=${{ ENVIRONMENT11 }}" >> "$GITHUB_OUTPUT"
+      echo "ENVIRONMENT12=${{ ENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
+      echo "ENVIRONMENT13=${{ ENVIRONMENT13 }}" >> "$GITHUB_OUTPUT"
+      echo "ENVIRONMENT14=${{ ENVIRONMENT14 }}" >> "$GITHUB_OUTPUT"
+
   call-reusable:
     uses: ./.github/workflows/reusable-test.yml
     with:
       script-path: ./scripts/myscript.sh
-    
+      ENVIRONMENT: ${{ github.event.inputs.Environment }}
+      ENVIRONMENT2: ${{ github.event.inputs.Environment2 }}
+      ENVIRONMENT3: ${{ github.event.inputs.Environment3 }}
+      ENVIRONMENT4: ${{ github.event.inputs.Environment4 }}
+      ENVIRONMENT5: ${{ github.event.inputs.Environment5 }}
+      ENVIRONMENT6: ${{ github.event.inputs.Environment6 }}
+      ENVIRONMENT7: ${{ github.event.inputs.Environment7 }}
+      ENVIRONMENT8: ${{ github.event.inputs.Environment8 }}
+      ENVIRONMENT9: ${{ github.event.inputs.Environment9 }}
+      ENVIRONMENT10: ${{ github.event.inputs.Environment10 }}
