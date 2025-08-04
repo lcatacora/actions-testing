@@ -105,6 +105,11 @@ on:
 
   # push:
     # branches: [main]
+env:
+  ENVIRONMENT11: prod2
+  ENVIRONMENT12: prod3
+  ENVIRONMENT13: prod4
+  ENVIRONMENT14: prod5
 
 jobs:
   call-reusable:
