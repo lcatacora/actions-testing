@@ -1,0 +1,11 @@
+name: Call Reusable Shell Script Test
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/reusable-test.yml
+    with:
+      script-path: ./scripts/myscript.sh
