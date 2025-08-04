@@ -1,8 +1,20 @@
 name: Call Reusable Shell Script Test
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
+    inputs:
+      Environment:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+
+  # push:
+    # branches: [main]
 
 jobs:
   call-reusable:
