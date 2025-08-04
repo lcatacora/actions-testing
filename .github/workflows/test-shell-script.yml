@@ -119,10 +119,10 @@ jobs:
       - name: Set up environment variables
         id: set-env-vars    
         run: |
-          echo "ENVIRONMENT11=${{ ENVIRONMENT11 }}" >> "$GITHUB_OUTPUT"
-          echo "ENVIRONMENT12=${{ ENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
-          echo "ENVIRONMENT13=${{ ENVIRONMENT13 }}" >> "$GITHUB_OUTPUT"
-          echo "ENVIRONMENT14=${{ ENVIRONMENT14 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT11=${{ vars.ENVIRONMENT11 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT12=${{ vars.ENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT13=${{ vars.ENVIRONMENT13 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT14=${{ vars.ENVIRONMENT14 }}" >> "$GITHUB_OUTPUT"
 
   call-reusable:
     uses: ./.github/workflows/reusable-test.yml
