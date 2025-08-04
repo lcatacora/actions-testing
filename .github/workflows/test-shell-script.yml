@@ -111,5 +111,4 @@ jobs:
     uses: ./.github/workflows/reusable-test.yml
     with:
       script-path: ./scripts/myscript.sh
-    env:
-      ENVIRONMENT11: dev
+    
