@@ -115,11 +115,14 @@ jobs:
   EnvSetup:
     name: Setup Dynamic Environment Variables for reusable workflow
     runs-on: ubuntu-latest
-    run: |
-      echo "ENVIRONMENT11=${{ ENVIRONMENT11 }}" >> "$GITHUB_OUTPUT"
-      echo "ENVIRONMENT12=${{ ENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
-      echo "ENVIRONMENT13=${{ ENVIRONMENT13 }}" >> "$GITHUB_OUTPUT"
-      echo "ENVIRONMENT14=${{ ENVIRONMENT14 }}" >> "$GITHUB_OUTPUT"
+    steps:
+      - name: Set up environment variables
+        id: set-env-vars    
+        run: |
+          echo "ENVIRONMENT11=${{ ENVIRONMENT11 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT12=${{ ENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT13=${{ ENVIRONMENT13 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT14=${{ ENVIRONMENT14 }}" >> "$GITHUB_OUTPUT"
 
   call-reusable:
     uses: ./.github/workflows/reusable-test.yml
