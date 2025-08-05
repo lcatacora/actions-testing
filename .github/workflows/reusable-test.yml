@@ -20,7 +20,7 @@ jobs:
       - name: Set Environment variables
         run: |
           echo "script-path=${{ inputs.script-path }}" >> "$GITHUB_ENV"
-          echo "Environment=${{ inputs.Environment }}" >> "$GITHUB_ENV"
-          echo "Environment11=${{ inputs.Environment11 }}" >> "$GITHUB_ENV"
+          echo "MyEnvironment=${{ inputs.MyEnvironment }}" >> "$GITHUB_ENV"
+          echo "MyEnvironment11=${{ inputs.MyEnvironment11 }}" >> "$GITHUB_ENV"
       - name: Run shell script
         run: bash ${{ inputs.script-path }}
