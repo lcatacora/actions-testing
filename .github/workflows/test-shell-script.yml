@@ -129,5 +129,5 @@ jobs:
     uses: ./.github/workflows/reusable-test.yml
     with:
       script-path: ./scripts/myscript.sh
-      Environment1: ${{ inputs.Environment }}
+      Environment: ${{ inputs.Environment }}
       Environment11: ${{ vars.ENVIRONMENT11 }}
