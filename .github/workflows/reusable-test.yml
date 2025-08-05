@@ -6,7 +6,12 @@ on:
       script-path:
         required: true
         type: string
-
+      Environment:
+        required: true
+        type: string
+      Environment11:
+        required: true
+        type: string
 jobs:
   test-shell-script:
     runs-on: ubuntu-latest
