@@ -120,7 +120,7 @@ jobs:
         id: set-env-vars    
         run: |
           echo "MyEnvironment=${{ inputs.MyEnvironment }}" >> "$GITHUB_OUTPUT"
-          echo "MyEnvironment11=${{ env.MyEnvironment11 }}" >> "$GITHUB_OUTPUT"
+          echo "MyEnvironment11=${{ env.MyEnvironment11 }}" >> "$GITHUB_ENV"
           echo "ENVIRONMENT12=${{ env.MYENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
 
   call-reusable:
