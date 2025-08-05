@@ -3,7 +3,7 @@ name: Call Reusable Shell Script Test
 on:
   workflow_dispatch:
     inputs:
-      Environment:
+      MyEnvironment:
         description: 'Select the environment to run the script'
         required: true
         default: dev
@@ -106,8 +106,8 @@ on:
   # push:
     # branches: [main]
 env:
-  ENVIRONMENT11: prod2
-  ENVIRONMENT12: prod3
+  MyEnvironment11: prod2
+  MYENVIRONMENT12: prod3
   ENVIRONMENT13: prod4
   ENVIRONMENT14: prod5
 
@@ -119,9 +119,9 @@ jobs:
       - name: Set up environment variables
         id: set-env-vars    
         run: |
-          echo "ENVIRONMENT1=${{ inputs.Environment}}" >> "$GITHUB_OUTPUT"
-          echo "ENVIRONMENT11=${{ env.ENVIRONMENT11 }}" >> "$GITHUB_OUTPUT"
-          echo "ENVIRONMENT12=${{ env.ENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT1=${{ inputs.MyEnvironment}}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT11=${{ env.MyEnvironment11 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT12=${{ env.MYENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
           echo "ENVIRONMENT13=${{ env.ENVIRONMENT13 }}" >> "$GITHUB_OUTPUT"
           echo "ENVIRONMENT14=${{ env.ENVIRONMENT14 }}" >> "$GITHUB_OUTPUT"
 
@@ -129,5 +129,5 @@ jobs:
     uses: ./.github/workflows/reusable-test.yml
     with:
       script-path: ./scripts/myscript.sh
-      Environment: ${{ inputs.Environment }}
-      Environment11: ${{ vars.ENVIRONMENT11 }}
+      Environment: ${{ inputs.MyEnvironment }}
+      Environment11: ${{ vars.MyEnvironment11 }}

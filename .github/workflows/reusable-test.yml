@@ -6,10 +6,10 @@ on:
       script-path:
         required: true
         type: string
-      Environment:
+      MyEnvironment:
         required: true
         type: string
-      Environment11:
+      MyEnvironment11:
         required: true
         type: string
 jobs:
