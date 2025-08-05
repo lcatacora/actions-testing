@@ -128,4 +128,4 @@ jobs:
     with:
       script-path: ./scripts/myscript.sh
       MyEnvironment: ${{ inputs.MyEnvironment }}
-      MyEnvironment11: ${{ env.MyEnvironment11 }}
+      # MyEnvironment11: ${{ vars.MyEnvironment11 }}
