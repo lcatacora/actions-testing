@@ -119,8 +119,8 @@ jobs:
       - name: Set up environment variables
         id: set-env-vars    
         run: |
-          echo "ENVIRONMENT1=${{ inputs.MyEnvironment }}" >> "$GITHUB_OUTPUT"
-          echo "ENVIRONMENT11=${{ env.MyEnvironment11 }}" >> "$GITHUB_OUTPUT"
+          echo "MyEnvironment=${{ inputs.MyEnvironment }}" >> "$GITHUB_OUTPUT"
+          echo "MyEnvironment11=${{ env.MyEnvironment11 }}" >> "$GITHUB_OUTPUT"
           echo "ENVIRONMENT12=${{ env.MYENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
 
   call-reusable:
