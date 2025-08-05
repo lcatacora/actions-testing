@@ -119,22 +119,15 @@ jobs:
       - name: Set up environment variables
         id: set-env-vars    
         run: |
-          echo "ENVIRONMENT11=${{ vars.ENVIRONMENT11 }}" >> "$GITHUB_OUTPUT"
-          echo "ENVIRONMENT12=${{ vars.ENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
-          echo "ENVIRONMENT13=${{ vars.ENVIRONMENT13 }}" >> "$GITHUB_OUTPUT"
-          echo "ENVIRONMENT14=${{ vars.ENVIRONMENT14 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT1=${{ inputs.Environment}}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT11=${{ env.ENVIRONMENT11 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT12=${{ env.ENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT13=${{ env.ENVIRONMENT13 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT14=${{ env.ENVIRONMENT14 }}" >> "$GITHUB_OUTPUT"
 
   call-reusable:
     uses: ./.github/workflows/reusable-test.yml
     with:
       script-path: ./scripts/myscript.sh
-      ENVIRONMENT: ${{ inputs.Environment }}
-      ENVIRONMENT2: ${{ inputs.Environment2 }}
-      ENVIRONMENT3: ${{ inputs.Environment3 }}
-      ENVIRONMENT4: ${{ inputs.Environment4 }}
-      ENVIRONMENT5: ${{ inputs.Environment5 }}
-      ENVIRONMENT6: ${{ inputs.Environment6 }}
-      ENVIRONMENT7: ${{ inputs.Environment7 }}
-      ENVIRONMENT8: ${{ inputs.Environment8 }}
-      ENVIRONMENT9: ${{ inputs.Environment9 }}
-      ENVIRONMENT10: ${{ inputs.Environment10 }}
+      ENVIRONMENT: ${{ vars.Environment }}
+      ENVIRONMENT11: ${{ vars.ENVIRONMENT11 }}
