@@ -9,9 +9,9 @@ on:
       MyEnvironment:
         required: true
         type: string
-      MyEnvironment11:
-        required: true
-        type: string
+      # MyEnvironment11:
+      #   required: true
+      #   type: string
 jobs:
   test-shell-script:
     runs-on: ubuntu-latest
@@ -21,6 +21,6 @@ jobs:
         run: |
           echo "script-path=${{ inputs.script-path }}" >> "$GITHUB_ENV"
           echo "MyEnvironment=${{ inputs.MyEnvironment }}" >> "$GITHUB_ENV"
-          echo "MyEnvironment11=${{ inputs.MyEnvironment11 }}" >> "$GITHUB_ENV"
+          echo "MyEnvironment11=${{ vars.MyEnvironment11 }}" >> "$GITHUB_ENV"
       - name: Run shell script
         run: bash ${{ inputs.script-path }}
