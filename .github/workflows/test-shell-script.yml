@@ -119,7 +119,7 @@ jobs:
       - name: Set up environment variables
         id: set-env-vars    
         run: |
-          echo "ENVIRONMENT1=${{ inputs.MyEnvironment}}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT1=${{ inputs.MyEnvironment }}" >> "$GITHUB_OUTPUT"
           echo "ENVIRONMENT11=${{ env.MyEnvironment11 }}" >> "$GITHUB_OUTPUT"
           echo "ENVIRONMENT12=${{ env.MYENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
           echo "ENVIRONMENT13=${{ env.ENVIRONMENT13 }}" >> "$GITHUB_OUTPUT"
@@ -129,5 +129,5 @@ jobs:
     uses: ./.github/workflows/reusable-test.yml
     with:
       script-path: ./scripts/myscript.sh
-      Environment: ${{ inputs.MyEnvironment }}
-      Environment11: ${{ vars.MyEnvironment11 }}
+      MyEnvironment: ${{ inputs.MyEnvironment }}
+      MyEnvironment11: ${{ vars.MyEnvironment11 }}
