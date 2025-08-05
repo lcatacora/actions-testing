@@ -17,5 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Set Environment variables
+        run: |
+          echo "script-path=${{ inputs.script-path }}" >> "$GITHUB_ENV"
+          echo "Environment=${{ inputs.Environment }}" >> "$GITHUB_ENV"
+          echo "Environment11=${{ inputs.Environment11 }}" >> "$GITHUB_ENV"
       - name: Run shell script
-        run: bash "${{ inputs.script-path }} ${{ inputs.Environment }} ${{ inputs.Environment11 }}"
+        run: bash ${{ inputs.script-path }}
