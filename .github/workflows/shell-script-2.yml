@@ -116,7 +116,7 @@ env:
 
 jobs:
   EnvSetup:
-    name: Setup Dynamic Environment Variables for reusable workflow
+    name: Run Shell Script with Dynamic Environment Variables
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -134,4 +134,20 @@ jobs:
           echo "Running script ./scripts/myscript.sh"
           ./scripts/myscript.sh
           echo "done running script ./scripts/myscript.sh"
-          
+        env:
+          MyEnvironment: ${{ inputs.MyEnvironment }}
+          MyEnvironment11: ${{ env.MyEnvironment11 }}
+          MYENVIRONMENT12: ${{ env.MYENVIRONMENT12 }}
+          ENVIRONMENT2: ${{ inputs.Environment2 }}
+          ENVIRONMENT3: ${{ inputs.Environment3 }}
+          ENVIRONMENT4: ${{ inputs.Environment4 }}
+          ENVIRONMENT5: ${{ inputs.Environment5 }}
+          ENVIRONMENT6: ${{ inputs.Environment6 }}
+          ENVIRONMENT7: ${{ inputs.Environment7 }}
+          ENVIRONMENT8: ${{ inputs.Environment8 }}
+          ENVIRONMENT9: ${{ inputs.Environment9 }}
+          ENVIRONMENT10: ${{ inputs.Environment10 }}
+          ENVIRONMENT11: ${{ inputs.Environment11 }}
+          ENVIRONMENT12: ${{ env.ENVIRONMENT12 }}
+          ENVIRONMENT13: ${{ env.ENVIRONMENT13 }}
+          ENVIRONMENT14: ${{ env.ENVIRONMENT14 }}  
