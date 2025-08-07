@@ -1,0 +1,137 @@
+# this script is used to test the action from a branch.
+
+name: Call Script Test of branch
+
+
+on:
+  workflow_dispatch:
+    inputs:
+      MyEnvironment:
+        description: 'Select the environment to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment2:
+        description: 'Select the environment2 to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment3:
+        description: 'Select the environment3 to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment4:
+        description: 'Select the environment4 to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment5:
+        description: 'Select the environment5 to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment6:
+        description: 'Select the environment6 to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment7:
+        description: 'Select the environment7 to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment8:
+        description: 'Select the environment8 to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment9:
+        description: 'Select the environment9 to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      Environment10:
+        description: 'Select the environment10 to run the script'
+        required: true
+        default: dev
+        options:
+          - dev
+          - staging
+          - prod
+        type: choice
+      # Environment11:
+      #   description: 'Select the environment11 to run the script'
+      #   required: true
+      #   default: dev
+      #   options:
+      #     - dev
+      #     - staging
+      #     - prod
+      #   type: choice  
+
+  # push:
+    # branches: [main]
+env:
+  MyEnvironment11: prod2
+  MYENVIRONMENT12: prod3
+  ENVIRONMENT13: prod4
+  ENVIRONMENT14: prod5
+
+jobs:
+  EnvSetup:
+    name: Setup Dynamic Environment Variables for reusable workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up environment variables
+        id: set-env-vars    
+        run: |
+          echo "MyEnvironment=${{ inputs.MyEnvironment }}" >> "$GITHUB_OUTPUT"
+          echo "MyEnvironment11=${{ env.MyEnvironment11 }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT12=${{ env.MYENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
+
+      - name: run shell script
+        run: |
+          echo "Running script ./scripts/myscript.sh"
+          ./scripts/myscript.sh
+          echo "done running script ./scripts/myscript.sh"
+          
