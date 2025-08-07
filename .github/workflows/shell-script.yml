@@ -116,6 +116,9 @@ jobs:
     name: Setup Dynamic Environment Variables for reusable workflow
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
       - name: Set up environment variables
         id: set-env-vars    
         run: |
