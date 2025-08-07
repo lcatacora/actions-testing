@@ -1,4 +1,4 @@
-name: Call Reusable Shell Script Test
+name: Call Script Test
 
 on:
   workflow_dispatch:
@@ -123,9 +123,9 @@ jobs:
           echo "MyEnvironment11=${{ env.MyEnvironment11 }}" >> "$GITHUB_OUTPUT"
           echo "ENVIRONMENT12=${{ env.MYENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
 
-  call-reusable:
-    uses: ./.github/workflows/reusable-test.yml
-    with:
-      script-path: ./scripts/myscript.sh
-      MyEnvironment: ${{ inputs.MyEnvironment }}
-      #MyEnvironment11: ${{ vars.MyEnvironment11 }}
+      - name: run shell script
+        run: |
+          echo "Running script ./scripts/myscript.sh"
+          ./scripts/myscript.sh
+          echo "done running script ./scripts/myscript.sh"
+          
