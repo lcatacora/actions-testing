@@ -126,7 +126,7 @@ jobs:
 
       - name: check boolean
         id: check-boolean
-        if: ${{ inputs.Environment2 == 'true' }}
+        if: ${{ inputs.Environment2 == true }}
         run: |
           if [ "${{ inputs.Environment2 }}" = "true" ]; then
             echo "Environment2 is true"
