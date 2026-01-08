@@ -15,12 +15,8 @@ on:
       Environment2:
         description: 'Select the environment2 to run the script'
         required: true
-        default: dev
-        options:
-          - dev
-          - staging
-          - prod
-        type: choice
+        default: false
+        type: boolean
       Environment3:
         description: 'Select the environment3 to run the script'
         required: true
