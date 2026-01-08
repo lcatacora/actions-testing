@@ -123,6 +123,16 @@ jobs:
           echo "MyEnvironment11=${{ env.MyEnvironment11 }}" >> "$GITHUB_OUTPUT"
           echo "ENVIRONMENT12=${{ env.MYENVIRONMENT12 }}" >> "$GITHUB_OUTPUT"
 
+
+      - name: check boolean
+        run: |
+          if [ "${{ inputs.Environment2 }}" = "true" ]; then
+            echo "Environment2 is true"
+          else
+            echo "Environment2 is false"
+          fi
+          echo ${{ inputs.Environment2 }}
+
       - name: run shell script
         run: |
           echo "Running script ./scripts/myscript.sh"
